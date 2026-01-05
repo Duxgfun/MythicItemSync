@@ -1,0 +1,124 @@
+# =====================================================
+# MythicItemSync by ImDuxg
+# Paper / Spigot 1.21+
+# =====================================================
+
+settings:
+  # Language file to use (vi_VN / en_US)
+  # Ngôn ngữ sử dụng (vi_VN / en_US)
+  language: "vi_VN"
+
+  # Enable detailed debug logging (NOT recommended in production)
+  # Bật log debug chi tiết (KHÔNG khuyến nghị khi chạy thật)
+  debug: false
+
+# =====================================================
+# SYNC FEATURES / TÍNH NĂNG SYNC
+# =====================================================
+sync:
+  # Sync player inventory when they join the server
+  # Sync kho đồ người chơi khi vào server
+  on-join: true
+
+  # Delay (ticks) after join before syncing (20 ticks = 1 second)
+  # Thời gian chờ sau khi vào server trước khi sync (20 tick = 1 giây)
+  join-delay-ticks: 40
+
+  # Detect MythicMobs reload command and auto-sync online players
+  # Tự phát hiện lệnh reload MythicMobs và sync người chơi online
+  detect-mythic-reload-command: true
+
+  # Delay after detecting MythicMobs reload before syncing
+  # Thời gian chờ sau khi reload MythicMobs trước khi sync
+  reload-detect-delay-ticks: 40
+
+  # Sync all online players when this plugin is enabled
+  # Sync toàn bộ người chơi online khi plugin được bật
+  on-enable: true
+
+  # -------------------------------------------------
+  # NEW: Sync when player takes MythicItem from container
+  # MỚI: Sync khi người chơi lấy MythicItem từ rương/container
+  # -------------------------------------------------
+  on-container-take: true
+
+  # Scan inside shulker box when the taken item is a shulker
+  # Quét item bên trong nếu item lấy ra là shulker box
+  container-take-scan-shulkers: true
+
+  # Max shulker nesting depth when taking item from container
+  # Độ sâu shulker khi lấy item từ container
+  # 1 = only outer shulker / chỉ shulker ngoài
+  # 2 = shulker inside shulker (recommended) / shulker trong shulker (khuyến nghị)
+  container-take-max-shulker-depth: 2
+
+  # -------------------------------------------------
+  # Anti-spam cooldown for container-take sync
+  # Chống spam sync khi lấy item từ container
+  # -------------------------------------------------
+  container-take-cooldown:
+    # Enable cooldown for container-take sync
+    # Bật cooldown khi sync item lấy từ container
+    enabled: true
+
+    # Cooldown time in milliseconds (1000 = 1 second)
+    # Thời gian cooldown (ms) (1000 = 1 giây)
+    time-ms: 800
+
+    # Behavior when player is still on cooldown:
+    # true  = Skip sync silently (recommended)
+    #         Bỏ qua sync, KHÔNG hủy thao tác người chơi (khuyến nghị)
+    # false = Cancel inventory action (NOT recommended)
+    #         Hủy thao tác click/kéo item (không khuyến nghị)
+    skip-when-cooldown: true
+
+# =====================================================
+# FULL SYNC SCAN SCOPE / PHẠM VI QUÉT SYNC TOÀN BỘ
+# =====================================================
+scan:
+  # Scan main inventory / Quét kho đồ chính
+  include-inventory: true
+
+  # Scan ender chest / Quét ender chest
+  include-enderchest: true
+
+  # Scan equipped armor / Quét giáp đang mặc
+  include-armor: true
+
+  # Scan offhand slot / Quét tay phụ
+  include-offhand: true
+
+  # Enable shulker scanning during full sync / Bật quét shulker khi sync toàn bộ
+  scan-shulkers: true
+
+  # Max shulker nesting depth during full sync / Độ sâu shulker khi sync toàn bộ
+  max-shulker-depth: 2
+
+# =====================================================
+# PERFORMANCE / HIỆU NĂNG
+# =====================================================
+performance:
+  # Items processed per tick per player
+  # Số item xử lý mỗi tick / mỗi người chơi
+  # Higher = faster sync but more CPU / Cao hơn = nhanh hơn nhưng tốn CPU
+  items-per-tick-per-player: 200
+
+  # Max number of players syncing at the same time
+  # Số người chơi được sync song song
+  max-concurrent-players: 6
+
+# =====================================================
+# LOGGING / GHI LOG
+# =====================================================
+logging:
+  # Write sync logs to plugins/MythicItemSync/logs/sync.log
+  # Ghi log sync vào plugins/MythicItemSync/logs/sync.log
+  enabled: true
+
+  # Log container-take events (spam-safe due cooldown)
+  # Log sự kiện lấy item từ container (đã có cooldown chống spam)
+  log-container-take: true
+
+  # Log player full-sync finished
+  # Log khi sync xong cho người chơi
+  log-player-sync-finish: true

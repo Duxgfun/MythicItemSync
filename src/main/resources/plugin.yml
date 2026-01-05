@@ -1,0 +1,20 @@
+name: MythicItemSync
+version: 1.0
+main: me.imduxg.mythicitemsync.MythicItemSyncPlugin
+api-version: "1.21"
+author: ImDuxg
+softdepend: [MythicMobs, AuthMe]
+
+commands:
+  mythicitemsync:
+    aliases: [mis, mythicsync, msync]
+    description: Sync MythicMobs items across inventories/ender/shulkers.
+    usage: /<command> help
+
+permissions:
+  mythicitemsync.admin:
+    description: Full access to MythicItemSync.
+    default: op
+  mythicitemsync.sync:
+    description: Allow using sync commands.
+    default: op

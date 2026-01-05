@@ -1,0 +1,18 @@
+prefix: "&b[&fMythicItemSync&b]&r "
+
+reloaded: "&aĐã reload cấu hình & file ngôn ngữ."
+no-permission: "&cBạn không có quyền."
+player-not-found: "&cKhông tìm thấy người chơi: &f{player}&c."
+mythic-not-found: "&eKhông thấy MythicMobs. Plugin vẫn chạy nhưng không thể cập nhật item Mythic."
+sync-start-all: "&aBắt đầu sync cho &f{count}&a người chơi..."
+sync-start-one: "&aBắt đầu sync cho &f{player}&a..."
+sync-done: "&aSync xong cho &f{player}&a. Đã cập nhật: &f{updated}&a, đã quét: &f{scanned}&a."
+sync-queued: "&eNgười chơi &f{player}&e đã được đưa vào hàng đợi sync."
+status:
+  - "&7--- &bMythicItemSync &7---"
+  - "&7MythicMobs: {mythic}"
+  - "&7Queue: &f{queue}&7 | Running: &f{running}"
+help:
+  - "&b/mythicitemsync reload &7- Reload config + lang"
+  - "&b/mythicitemsync sync [player|all] &7- Sync ngay"
+  - "&b/mythicitemsync status &7- Xem trạng thái"
