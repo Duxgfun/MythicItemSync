@@ -73,4 +73,89 @@ It is designed to safely update Mythic items after reloads and during gameplay a
 ---
 
 ## 🧪 Commands
+```
+/mythicitemsync
+/msync
+/mis
+```
 
+### Command List
+
+| Command | Description |
+|------|------------|
+| `/msync sync <player>` | Sync Mythic items for a specific player |
+| `/msync sync all` | Sync Mythic items for all online players |
+| `/msync reload` | Reload configuration and language files |
+| `/msync status` | View sync queue and running tasks |
+
+---
+
+## 🔐 Permissions
+
+| Permission | Description |
+|-----------|------------|
+| `mythicitemsync.use` | Access basic commands |
+| `mythicitemsync.sync` | Allows manual synchronization |
+| `mythicitemsync.reload` | Allows plugin reload |
+| `mythicitemsync.admin` | Full access (includes all permissions) |
+
+**Default:**
+- OPs: Full access
+- Non-OP players: No access
+
+---
+
+## ⚙ Configuration Highlights
+
+- Sync on join / reload / enable
+- Container-take sync with cooldown protection
+- Shulker scanning with depth limits
+- Performance tuning (items per tick, concurrent players)
+- File-only logging with timestamps
+
+See `config.yml` for full documentation (EN / VI).
+
+---
+
+## 📄 Logging
+
+All sync actions are logged to:
+```
+plugins/MythicItemSync/logs/sync.log
+```
+
+Example:
+```
+[2026-01-05 21:14:33] [PLAYER_SYNC] player=Steve scanned=128 updated=12 time=87ms
+```
+
+---
+
+## 🧠 Why MythicItemSync?
+
+Unlike basic resync plugins, MythicItemSync focuses on:
+- **Data safety** (no enchant/NBT loss)
+- **Performance** (no full inventory spam)
+- **Clean output** (no console or chat spam)
+- **Real gameplay integration** (sync only when needed)
+
+Perfect for **SMP**, **RPG**, and **MythicMobs-heavy servers**.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 👤 Author
+
+**ImDuxg**
+
+---
+
+## 💬 Support & Feedback
+
+If you encounter bugs, performance issues, or have feature requests,
+please open an **Issue** or **Pull Request** on GitHub.
